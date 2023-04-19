@@ -41,9 +41,8 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
-
-Once the application is running you can visit http://localhost:5000/api/document to see the Swagger interface.
 ```
+Once the application is running you can visit http://localhost:5000/api/document to see the Swagger interface.
 
 ## Test
 
