@@ -23,18 +23,19 @@ export class IsNotExist implements ValidatorConstraintInterface {
 
   async validate(value: string, validationArguments: ValidationArguments) {
     const repository = validationArguments.constraints[0] as string;
+    const pathToProperty = validationArguments.constraints[1];
     const currentValue = validationArguments.object as ValidationEntity;
 
     const entity = (await this.dataSource.getRepository(repository).findOne({
       where: {
-        [validationArguments.property]: value,
+        [pathToProperty ? pathToProperty : validationArguments.property]:
+          pathToProperty ? value?.[pathToProperty] : value,
       },
     })) as ValidationEntity;
 
     if (entity?.id === currentValue?.id) {
       return true;
     }
-
-    return !entity;
+    return Boolean(!entity);
   }
 }

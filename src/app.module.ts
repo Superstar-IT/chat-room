@@ -9,6 +9,8 @@ import { TypeOrmConfigService } from './database/typeorm-config.service';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
+import { ChatRoomModule } from './chat-room/chat-room.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -24,6 +26,7 @@ import { UserModule } from './user/user.module';
       },
     }),
     UserModule,
+    ChatRoomModule,
   ],
   controllers: [AppController],
   providers: [AppService],
