@@ -31,10 +31,13 @@
 ```bash
 $ yarn install
 ```
-
-## Running the app
-
+## Quick run
 ```bash
+$ git clone https://github.com/Superstar-IT/chat-room
+$ cd chat-room
+$ cp env-example .env
+$ yarn install
+
 # development
 $ yarn run start
 
@@ -58,6 +61,27 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
+## Database utils
+
+```bash
+# Generate migration
+$ npm run migration:generate -- src/database/migrations/CreateNameTable 
+
+# Run migration
+$ npm run migration:run
+
+# Revert migration
+$ npm run migration:revert
+
+# Drop all tables in database
+$ npm run schema:drop
+
+# Run seed
+$ npm run seed:run
+```
+
+
+```
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
