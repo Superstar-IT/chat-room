@@ -1,4 +1,4 @@
-import { Column, Entity } from 'typeorm';
+import { BeforeInsert, BeforeUpdate, Column, Entity } from 'typeorm';
 
 import { AbstractEntity } from 'src/core/entities/abstract.entity';
 
@@ -12,6 +12,13 @@ export class ChatRoomEntity extends AbstractEntity {
 
   @Column({ type: 'jsonb', default: [] })
   members: string[];
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  removeDuplicates() {
+    const newMembers = this.members.filter((member) => member !== this.creator);
+    this.members = [...new Set(newMembers)];
+  }
 
   memberExists(member: string): boolean {
     const memberIds = new Set(this.members || []);

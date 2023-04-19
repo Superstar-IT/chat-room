@@ -7,9 +7,14 @@ import { ChatRoomEntity } from './entities/chat-room.entity';
 
 import { IsExist } from '../core/validators/is-exists.validator';
 import { IsNotExist } from '../core/validators/is-not-exists.validator';
+import { UserModule } from 'src/user/user.module';
+import { ChatHistoryEntity } from './entities/chat-history.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([ChatRoomEntity])],
+  imports: [
+    TypeOrmModule.forFeature([ChatRoomEntity, ChatHistoryEntity]),
+    UserModule,
+  ],
   controllers: [ChatRoomController],
   providers: [ChatRoomService, IsExist, IsNotExist],
 })
