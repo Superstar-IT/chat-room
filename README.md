@@ -23,14 +23,9 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
+Test Project
+[Nest](https://github.com/nestjs/nest), [TypeORM](https://typeorm.io/), [Swagger](https://swagger.io/), [Class-validator](https://github.com/typestack/class-validator)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ yarn install
-```
 ## Quick run
 ```bash
 $ git clone https://github.com/Superstar-IT/chat-room
@@ -46,6 +41,8 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
+
+Once the application is running you can visit http://localhost:5000/api/document to see the Swagger interface.
 ```
 
 ## Test
